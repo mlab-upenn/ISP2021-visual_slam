@@ -19,7 +19,7 @@ This is the github project for the F1Tenth Independent Study Projects 2021. In t
 ## Installation
 - Clone the current repository in a new workspace.
 - Install Librealsense2 on your system follow the instruction listed [here](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md).
-- Install Librealsense2 on the Jetson along with the kernel updates of the latest version use the instructions listed [here]((https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md)).
+- Install Librealsense2 on the Jetson along with the kernel updates of the latest version use the instructions listed [here]((https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md).
 - Setup and install [Kimera VIO ROS](https://github.com/MIT-SPARK/Kimera-VIO-ROS) and the [Kimera - Semantics](https://github.com/MIT-SPARK/Kimera-Semantics)
 - Install the [Segmentation Pipeline](https://github.com/Ravi3191/Seg_F1) in your current workspace. 
 
