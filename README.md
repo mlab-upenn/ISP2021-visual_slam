@@ -26,7 +26,7 @@ This is the github project for the F1Tenth Independent Study Projects 2021. In t
 
 ## Running the code
 
-* Start ROS Master for communication between nodes
+* Start ROS Master for communication between nodes \
 ```roscore``` 
 * ```roslaunch realsense2_camera rs_camera.launch enable_gyro:=true enable_accel:=true enable_infra1:=true enable_infra2:=true unite_imu_method:=linear_interpolation infra_width:=848 infra_height:=480 infra_fps:=15```
 * ```rosrun dynamic_reconfigure dynparam set /camera/stereo_module emitter_enabled 0``` 
