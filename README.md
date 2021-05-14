@@ -24,13 +24,25 @@ This is the github project for the F1Tenth Independent Study Projects 2021. In t
 - Install the [Segmentation Pipeline](https://github.com/Ravi3191/Seg_F1) in your current workspace. 
 
 
-## Running the code
+## Running the code for 3D reconstruction of map
 
 * Start ROS Master for communication between nodes \
 ```roscore``` 
-* ```roslaunch realsense2_camera rs_camera.launch enable_gyro:=true enable_accel:=true enable_infra1:=true enable_infra2:=true unite_imu_method:=linear_interpolation infra_width:=848 infra_height:=480 infra_fps:=15```
-* ```rosrun dynamic_reconfigure dynparam set /camera/stereo_module emitter_enabled 0``` 
-* `source ~/devel/setup.bash`
-* ```roslaunch kimera_vio_ros kimera_vio_ros_realsense_IR.launch run_stereo_dense:=true should_use_sim_time:=false use_lcd:=true```
-* ```roslaunch kimera_semantics_ros kimera_metric_realsense.launch run_stereo_dense:=true online:=true register_color:=false use_sim_time:=false```
-* ```rviz -d $(rospack find kimera_semantics_ros)/rviz/kimera_semantics_euroc.rviz``` 
+
+* Launch the Intel RealSense camera node with the following parameters \ 
+```roslaunch realsense2_camera rs_camera.launch enable_gyro:=true enable_accel:=true enable_infra1:=true enable_infra2:=true unite_imu_method:=linear_interpolation infra_width:=848 infra_height:=480 infra_fps:=15```
+
+* Disable the camera IR emitter \
+```rosrun dynamic_reconfigure dynparam set /camera/stereo_module emitter_enabled 0```
+
+* Source your workspace \
+```source ~/devel/setup.bash```
+
+* Launching the Kimera VIO node with the follwing parameters with Loop closure detection (use_lcd) enabled \
+ ```roslaunch kimera_vio_ros kimera_vio_ros_realsense_IR.launch run_stereo_dense:=true should_use_sim_time:=false use_lcd:=true```
+ 
+* Launch Kimera Semantics node \
+  ```roslaunch kimera_semantics_ros kimera_metric_realsense.launch run_stereo_dense:=true online:=true register_color:=false use_sim_time:=false```
+  
+* Visualise the Reconstruction on RViz \
+```rviz -d $(rospack find kimera_semantics_ros)/rviz/kimera_semantics_euroc.rviz``` 
