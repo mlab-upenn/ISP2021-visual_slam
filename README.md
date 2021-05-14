@@ -26,7 +26,14 @@ This is the github project for the F1Tenth Independent Study Projects 2021. In t
 
 ## Running the code
 * ```roscore``` 
-* ```roslaunch realsense2_camera rs_camera.launch unite_imu_method:=linear_interpolation```
-* `Step 3:` ....
+* ```roslaunch realsense2_camera rs_camera.launch enable_gyro:=true enable_accel:=true enable_infra1:=true enable_infra2:=true unite_imu_method:=linear_interpolation infra_width:=848 infra_height:=480 infra_fps:=15```
+* ```rosrun dynamic_reconfigure dynparam set /camera/stereo_module emitter_enabled 0``` 
+* `source ~/devel/setup.bash`
+* ``roslaunch kimera_vio_ros kimera_vio_ros_realsense_IR.launch run_stereo_dense:=true should_use_sim_time:=false use_lcd:=true```
+* ``roslaunch kimera_semantics_ros kimera_metric_realsense.launch run_stereo_dense:=true online:=true register_color:=false use_sim_time:=false```
+* ```rviz -d $(rospack find kimera_semantics_ros)/rviz/kimera_semantics_euroc.rviz``` 
+* ``roscore``` 
+* ``roscore``` 
+* ``roscore``` 
 
 
