@@ -42,7 +42,7 @@ This is the github project for the F1Tenth Independent Study Projects 2021. In t
  ```roslaunch kimera_vio_ros kimera_vio_ros_realsense_IR.launch run_stereo_dense:=true should_use_sim_time:=false use_lcd:=true```
  
 * Launch Kimera Semantics node \
-  ```roslaunch kimera_semantics_ros kimera_metric_realsense.launch run_stereo_dense:=true online:=true register_color:=false use_sim_time:=false```
+  ```roslaunch kimera_semantics_ros kimera_metric_realsense.launch run_stereo_dense:=true online:=true register_color:=true use_sim_time:=false```
   
 * Visualise the Reconstruction on RViz \
 ```rviz -d $(rospack find kimera_semantics_ros)/rviz/kimera_semantics_euroc.rviz``` 
