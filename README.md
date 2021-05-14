@@ -29,7 +29,7 @@ This is the github project for the F1Tenth Independent Study Projects 2021. In t
 * Start ROS Master for communication between nodes \
 ```roscore``` 
 
-* Launch the Intel RealSense camera node with the following parameters \ 
+* Launch the Intel RealSense camera node with the following parameters \
 ```roslaunch realsense2_camera rs_camera.launch enable_gyro:=true enable_accel:=true enable_infra1:=true enable_infra2:=true unite_imu_method:=linear_interpolation infra_width:=848 infra_height:=480 infra_fps:=15```
 
 * Disable the camera IR emitter \
